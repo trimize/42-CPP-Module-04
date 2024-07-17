@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teorimize <teorimize@student.42.fr>        +#+  +:+       +#+        */
+/*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:59:08 by teorimize         #+#    #+#             */
-/*   Updated: 2024/07/17 16:37:32 by teorimize        ###   ########.fr       */
+/*   Updated: 2024/07/17 18:02:41 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,7 @@ std::string const &AMateria::getType() const
     return(this->type);
 }
 
-AMateria    *AMateria::clone() const
-{
-    return (AMateria *)this;
-}
-
 void    AMateria::use(ICharacter &target)
 {
-    
+    std::cout << "AMateria " << this->getType() << " used on " << target.getName() << std::endl;
 }

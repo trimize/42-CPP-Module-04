@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teorimize <teorimize@student.42.fr>        +#+  +:+       +#+        */
+/*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:34:46 by teorimize         #+#    #+#             */
-/*   Updated: 2024/07/17 16:58:11 by teorimize        ###   ########.fr       */
+/*   Updated: 2024/07/17 18:20:09 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-#include "AMateria.hpp"
-#include <string>
-#include <iostream>
+# include "AMateria.hpp"
+# include <iostream>
+
+class AMateria;
 
 class ICharacter
 {

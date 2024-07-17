@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teorimize <teorimize@student.42.fr>        +#+  +:+       +#+        */
+/*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 15:44:52 by teorimize         #+#    #+#             */
-/*   Updated: 2024/07/17 17:03:15 by teorimize        ###   ########.fr       */
+/*   Updated: 2024/07/17 18:22:52 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,20 @@
 
 Character::Character()
 {
-    for(int i; i < 4; i++)
+    for(int i = 0; i < 4; i++)
     {
         this->inventory[i] = NULL;
     }
+    
+}
+
+Character::Character(std::string name)
+{
+    for(int i = 0; i < 4; i++)
+    {
+        this->inventory[i] = NULL;
+    }
+    this->name = name;
 }
 
 Character::Character(const Character &c)
@@ -76,10 +86,9 @@ void    Character::unequip(int idx)
         this->inventory[idx] = NULL;
 }
 
-void    Character::use(int idx, Character &target)
+void    Character::use(int idx, ICharacter &target)
 {
-    if (this->inventory[idx]->getType() == "ice")
-        std::cout << "* shoots an ice bolt at " + target.getName() + " *";
-    else if (this->inventory[idx]->getType() == "cure")
-        std::cout << "* heals " + target.getName() + "'s wounds";
+	if (idx < 0 || idx > 3 || !this->inventory[idx])
+		return ;
+	this->inventory[idx]->use(target);
 }

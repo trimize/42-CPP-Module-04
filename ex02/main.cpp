@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 14:41:29 by teorimize         #+#    #+#             */
-/*   Updated: 2024/07/17 17:53:00 by trimize          ###   ########.fr       */
+/*   Created: 2024/05/23 15:13:34 by trimize           #+#    #+#             */
+/*   Updated: 2024/06/07 15:30:03 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-# include "./AMateria.hpp"
-
-class Ice : public AMateria
+int	main(void)
 {
-    public :
-        Ice();
-	Ice(const Ice &i);
-        Ice &operator=(const Ice &i);
-	~Ice();
-        Ice* clone() const;
-	void use(ICharacter& target);
-};
+	Animal* a[10];
+	int	i;
 
-#endif
+	i = 0;
+	while (i < 5)
+		a[i++] = new Cat();
+	while (i < 10)
+		a[i++] = new Dog();
+	i = 0;
+	while (i < 10)
+		delete a[i++];
+	return 0;
+}
