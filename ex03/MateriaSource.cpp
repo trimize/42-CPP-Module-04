@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:19:53 by trimize           #+#    #+#             */
-/*   Updated: 2024/07/17 18:38:18 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/16 12:56:14 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &ms)
 {
-	*this = ms;
+	for(int i = 0; i < 4; i++)
+	{
+		if (this->materias[i])
+			delete this->materias[i];
+		if (ms.materias[i])
+			this->materias[i] = ms.materias[i]->clone();
+	}
 }
 
 MateriaSource	&MateriaSource::operator=(const MateriaSource &ms)
@@ -29,11 +35,8 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &ms)
 	{
 		if (this->materias[i])
 			delete this->materias[i];
-	}
-	for(int y = 0; y < 4; y++)
-	{
-		if (ms.materias[y])
-			this->materias[y] = ms.materias[y]->clone();
+		if (ms.materias[i])
+			this->materias[i] = ms.materias[i]->clone();
 	}
 	return (*this);
 }
@@ -43,7 +46,7 @@ MateriaSource::~MateriaSource()
 	for(int i = 0; i < 4; i++)
 	{
 		if (this->materias[i])
-		delete this->materias[i];
+			delete this->materias[i];
 	}
 }
 

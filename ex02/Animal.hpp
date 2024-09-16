@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:53:54 by trimize           #+#    #+#             */
-/*   Updated: 2024/06/07 14:54:41 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/09 14:34:53 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal
 		Animal(std::string type);
 		Animal(const Animal &ani);
 		Animal &operator=(const Animal &ani);
-		virtual ~Animal();
+		virtual ~Animal() = 0;
 		virtual void	makeSound() const;
 		std::string	getType(void) const;
 };

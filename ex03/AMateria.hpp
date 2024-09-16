@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 14:33:51 by teorimize         #+#    #+#             */
-/*   Updated: 2024/07/17 18:25:43 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/09 14:35:10 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AMateria
         AMateria(const AMateria &am);
         AMateria &operator=(const AMateria &am);
         virtual ~AMateria();
-        std::string const & getType() const; //Returns the materia type
+        std::string const & getType() const;
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
 };

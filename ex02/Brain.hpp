@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:08:25 by trimize           #+#    #+#             */
-/*   Updated: 2024/07/17 18:42:24 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/16 12:42:21 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@
 
 class Brain
 {
-	private:
-		std::string ideas[100];
 	public:
+		std::string ideas[100];
 		Brain();
-		Brain(std::string idea);
 		Brain(const Brain &brain);
 		Brain &operator=(const Brain &brain);
 		~Brain();

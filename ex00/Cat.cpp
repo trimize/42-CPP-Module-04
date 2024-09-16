@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:14:14 by trimize           #+#    #+#             */
-/*   Updated: 2024/07/17 19:12:13 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/16 14:59:16 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ Cat::Cat(const Cat &cat)
 Cat& Cat::operator=(const Cat &cat)
 {
 	std::cout << "Copy assignment operator called for a Cat" << std::endl;
-	if ( this != &cat )
-        	this->type = cat.type;
+	(void)cat;
 	return (*this);
 }
 

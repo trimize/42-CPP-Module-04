@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 15:14:13 by trimize           #+#    #+#             */
-/*   Updated: 2024/07/17 19:10:50 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/09 14:28:32 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Brain::Brain()
 {
-	int i = 0;
 	std::cout << "Brain created" << std::endl;
 }
 

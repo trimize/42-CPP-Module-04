@@ -25,7 +25,8 @@ WrongAnimal::WrongAnimal(std::string type) : type(type)
 WrongAnimal::WrongAnimal(const WrongAnimal &ani)
 {
 	std::cout << "Copied WrongAnimal !" << std::endl;
-	*this = ani;
+	if ( this != &ani )
+	   this->type = ani.type;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal &ani)
@@ -48,8 +49,5 @@ std::string	WrongAnimal::getType(void) const
 
 void	WrongAnimal::makeSound() const
 {
-	if (this->type.compare("WrongCat") != 0)
-		std::cout << "The sound emitted was quite strange..." << std::endl;
-	else
-		std::cout << "Because the method is not virtual the wrong cat won't meow and this will instead be printed." << std::endl;
+	std::cout << "The sound emitted was quite strange..." << std::endl;
 }

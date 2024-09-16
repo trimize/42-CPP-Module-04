@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:16:46 by trimize           #+#    #+#             */
-/*   Updated: 2024/07/17 19:11:54 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/16 15:09:47 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ Dog::Dog() : Animal("Dog")
 	std::cout << "Dog created" << std::endl;
 }
 
-Dog::Dog(const Dog &Dog) : b()
+Dog::Dog(const Dog &Dog)
 {
+	this->b = new Brain();
+	(void)Dog;
 	std::cout << "Copied Dog !" << std::endl;
-	*this = Dog;
 }
 
 Dog& Dog::operator=(const Dog &dog)
 {
 	std::cout << "Copy assignment operator called for a Dog" << std::endl;
-	if ( this != &dog )
-        	this->type = dog.type;
+	(void)dog;
 	return (*this);
 }
 

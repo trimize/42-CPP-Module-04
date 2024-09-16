@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:16:46 by trimize           #+#    #+#             */
-/*   Updated: 2024/07/17 19:12:16 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/16 14:59:27 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ Dog::Dog(const Dog &Dog)
 Dog& Dog::operator=(const Dog &dog)
 {
 	std::cout << "Copy assignment operator called for a Dog" << std::endl;
-	if ( this != &dog )
-        	this->type = dog.type;
+	(void)dog;
 	return (*this);
 }
 

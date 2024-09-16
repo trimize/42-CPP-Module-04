@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:13:34 by trimize           #+#    #+#             */
-/*   Updated: 2024/07/17 18:47:51 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/16 15:05:46 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	main(void)
 	//i = 0;
 	//while (i < 10)
 	//	delete a[i++];
-	//return 0;
 	Dog basic;
 	{
-		Dog tmp = basic;
+		Dog tmp(basic);
 	}
+	return 0;
 }
