@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 15:44:52 by teorimize         #+#    #+#             */
-/*   Updated: 2024/09/16 15:14:48 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/17 15:27:35 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,27 @@
 
 Character::Character()
 {
-    for(int i = 0; i < 4; i++)
-    {
-        this->inventory[i] = NULL;
-    }
-    
+	for(int i = 0; i < 4; i++)
+		this->inventory[i] = NULL; 
 }
 
 Character::Character(std::string name)
 {
-    for(int i = 0; i < 4; i++)
-    {
-        this->inventory[i] = NULL;
-    }
-    this->name = name;
+	for(int i = 0; i < 4; i++)
+		this->inventory[i] = NULL;
+	this->name = name;
 }
 
 Character::Character(const Character &c)
 {
-    this->name = c.getName();
-    for(int i = 0; i < 4; i++)
-    {
-        if (this->inventory[i])
-            delete this->inventory[i];
-	if (c.inventory[i])
-            this->inventory[i] = c.inventory[i]->clone();
-    }
+	this->name = c.getName();
+	for(int i = 0; i < 4; i++)
+	{
+		if (this->inventory[i])
+			delete this->inventory[i];
+		if (c.inventory[i])
+			this->inventory[i] = c.inventory[i]->clone();
+	}
 }
 
 Character	&Character::operator=(const Character &c)
@@ -48,9 +43,9 @@ Character	&Character::operator=(const Character &c)
 	for(int i = 0; i < 4; i++)
 	{
 		if (this->inventory[i])
-		delete this->inventory[i];
+			delete this->inventory[i];
 		if (c.inventory[i])
-		this->inventory[i] = c.inventory[i]->clone();
+			this->inventory[i] = c.inventory[i]->clone();
 	}
 	return (*this);
 }
@@ -60,7 +55,7 @@ Character::~Character()
 	for(int i = 0; i < 4; i++)
 	{
 		if (this->inventory[i])
-		delete this->inventory[i];
+			delete this->inventory[i];
 	}
 }
 
@@ -78,8 +73,8 @@ void    Character::equip(AMateria *m)
 	{
 		if (!this->inventory[i])
 		{
-		this->inventory[i] = m->clone();
-		return ;
+			this->inventory[i] = m->clone();
+			return ;
 		}
 		i++;
 	}

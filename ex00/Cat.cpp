@@ -6,7 +6,7 @@
 /*   By: trimize <trimize@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 14:14:14 by trimize           #+#    #+#             */
-/*   Updated: 2024/09/16 14:59:16 by trimize          ###   ########.fr       */
+/*   Updated: 2024/09/17 15:29:52 by trimize          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ Cat::Cat() : Animal("Cat")
 	std::cout << "Cat created" << std::endl;
 }
 
-Cat::Cat(const Cat &cat)
+Cat::Cat(const Cat &cat) : Animal("Cat")
 {
 	std::cout << "Copied Cat !" << std::endl;
-	*this = cat;
+	(void)cat;
 }
 
 Cat& Cat::operator=(const Cat &cat)

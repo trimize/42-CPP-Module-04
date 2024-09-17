@@ -17,10 +17,10 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat")
 	std::cout << "WrongCat created" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &WrongCat)
+WrongCat::WrongCat(const WrongCat &WrongCat) : WrongAnimal("WrongCat")
 {
 	std::cout << "Copied WrongCat !" << std::endl;
-	*this = WrongCat;
+	(void)WrongCat;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &WrongCat)
